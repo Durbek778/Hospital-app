@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HospitalApplication"
         tools:targetApi="31">
+      <activity android:name=".MainActivity"/>
         <activity
             android:name=".MediaActivity"
             android:exported="false">
@@ -41,7 +42,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
