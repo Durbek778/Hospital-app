@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity"
->
+    tools:context=".GameActivity">
 
     <GridLayout
         android:layout_width="match_parent"
@@ -15,109 +14,75 @@
         android:paddingTop="36dp"
         android:paddingBottom="36dp"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:paddingRight="16dp">
 
-        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="게임"
+            android:textSize="20sp"
+            android:textColor="@android:color/black" />
 
         <androidx.cardview.widget.CardView
 
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_rowWeight="3"
             android:padding="36dp"
             app:cardBackgroundColor="@color/bg_primary"
-            app:cardUseCompatPadding="true"
             app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="16dp"
                 android:gravity="center"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp"
+                android:orientation="vertical"
                 android:paddingLeft="16dp"
+                android:paddingTop="16dp"
                 android:paddingRight="16dp"
-                >
+                android:paddingBottom="0dp">
 
                 <!--card 1 -->
                 <ImageView
-                    android:id="@+id/spotify"
+                    android:id="@+id/subwaysurfers"
                     android:layout_width="334dp"
-                    android:layout_height="184dp"
+                    android:layout_height="180dp"
                     android:layout_marginBottom="16dp"
                     android:layout_weight="1"
                     android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     android:gravity="center"
-                    android:src="@drawable/game_img" />
+                    android:src="@drawable/subwaysurfers" />
 
                 <!--card 2 -->
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
+                <ImageView
+                    android:id="@+id/colorSort"
+                    android:layout_width="334dp"
+                    android:layout_height="180dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
                     android:clickable="true"
-                    android:id="@+id/navigation_to_artAct"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"  android:layout_marginBottom="16dp"
-                    android:background="@drawable/art_img"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="예술활동"
-                        android:textSize="50sp"
-                        android:textColor="@android:color/white"/>
-
-                </LinearLayout>
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:src="@drawable/color_sort" />
 
                 <!--card 3 -->
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:id="@+id/navigation_to_mediaAct"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                <ImageView
+                    android:id="@+id/onetMaster"
+                    android:layout_width="334dp"
+                    android:layout_height="180dp"
                     android:layout_marginBottom="16dp"
-                    android:background="@drawable/media_img"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="미디어시청"
-                        android:textSize="50sp"
-                        android:textColor="@android:color/white"/>
-
-                </LinearLayout>
-
-                <!--card 4 -->
-                <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:id="@+id/navigation_to_mediaActt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/media_img"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="미디어시청"
-                        android:textSize="50sp"
-                        android:textColor="@android:color/white"/>
-
-                </LinearLayout>
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:src="@drawable/onet_master" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
-
-
     </GridLayout>
 </RelativeLayout>

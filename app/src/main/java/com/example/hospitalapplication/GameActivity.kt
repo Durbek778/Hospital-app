@@ -2,9 +2,9 @@ package com.example.hospitalapplication
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 
 class GameActivity : AppCompatActivity() {
 
@@ -13,11 +13,26 @@ class GameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        val instagram = findViewById<ImageView>(R.id.spotify)
-        instagram.setOnClickListener {
+        supportActionBar?.hide()
+
+        val subwaysurfers = findViewById<ImageView>(R.id.subwaysurfers)
+        subwaysurfers.setOnClickListener {
             val url = "https://poki.com/kr/g/subway-surfers"
             openUrlInBrowser(url)
         }
+
+        val colorSort = findViewById<ImageView>(R.id.colorSort)
+        colorSort.setOnClickListener {
+            val url = "https://poki.com/en/g/water-color-sort"
+            openUrlInBrowser(url)
+        }
+
+        val onetMaster = findViewById<ImageView>(R.id.onetMaster)
+        onetMaster.setOnClickListener {
+            val url = "https://poki.com/en/g/onet-master"
+            openUrlInBrowser(url)
+        }
+
     }
 
     private fun openUrlInBrowser(url: String) {
