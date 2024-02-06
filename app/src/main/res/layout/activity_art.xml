@@ -1,20 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ArtActivity">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Art Activity"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="1"
+        android:paddingTop="36dp"
+        android:paddingBottom="36dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="예술활동"
+            android:textSize="20sp"
+            android:textColor="@android:color/black" />
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_rowWeight="3"
+            android:padding="36dp"
+            app:cardBackgroundColor="@color/bg_primary"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_rowWeight="3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <!--  card 1 -->
+                <LinearLayout
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/navigation_to_game"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
+                            android:id="@+id/image_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/local_art" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="동양화"
+                            android:textColor="@android:color/black"
+                            android:textSize="50sp" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <!--  card 2 -->
+                <LinearLayout
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/navigation_to_Art_Datailed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/image_vieww"
+                            android:layout_width="350dp"
+                            android:layout_height="220dp"
+                            android:layout_centerInParent="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/wester_art" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="서양화"
+                            android:textColor="@android:color/white"
+                            android:textSize="50sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--                card 3 -->
+                <LinearLayout
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/navigation_to_artAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/image_viewwe"
+                            android:layout_width="344dp"
+                            android:layout_height="210dp"
+                            android:adjustViewBounds="true"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/nature_art" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="자연"
+                            android:textColor="@android:color/black"
+                            android:textSize="50sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </GridLayout>
+
+</RelativeLayout>

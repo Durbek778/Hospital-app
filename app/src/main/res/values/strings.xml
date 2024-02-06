@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Hospital Application</string>
+    <string name="lorem_ipsum">" The basic trend of Korean art through the ages has been naturalistic,
+        a characteristic already evident as early as the Three Kingdoms period (c. 57 BCE–668 CE) but
+        fully established by the Unified, or Great, Silla (Korean: Shinla) period (668–935). The traditional
+        attitude of accepting nature as it is resulted in a highly developed appreciation for the simple and unadorned.
+        Korean artists, for example, favoured the unadorned beauty of raw materials, such as the natural patterns of wood grains.
+        The Korean potter was characteristically unconcerned about mechanical perfection of his surfaces, curves, or shapes.
+        His concern was to bring out the inherent or natural characteristics of his materials and the medium.
+        Potters, therefore, were able to work unselfconsciously and naturally, producing wares of engaging simplicity and artistic distinctiveness." </string>
 </resources>
