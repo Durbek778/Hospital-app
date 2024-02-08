@@ -12,8 +12,22 @@ class ArtActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val navigationGame = findViewById<LinearLayout>(R.id.navigation_to_Art_Datailed)
-        navigationGame.setOnClickListener {
+        val navigationDatailedArt = findViewById<LinearLayout>(R.id.navigation_to_Art_Datailed)
+        navigationDatailedArt.setOnClickListener {
+            val Intent = Intent(this, ArtDetailedActivity::class.java)
+            startActivity(Intent)
+
+        }
+
+        val navigationDatailedArtt = findViewById<LinearLayout>(R.id.navigation_to_Art_Datailedd)
+        navigationDatailedArtt.setOnClickListener {
+            val Intent = Intent(this, ArtDetailedActivity::class.java)
+            startActivity(Intent)
+
+        }
+
+        val navigationDatailedArttt = findViewById<LinearLayout>(R.id.navigation_to_Art_Dataileddd)
+        navigationDatailedArttt.setOnClickListener {
             val Intent = Intent(this, ArtDetailedActivity::class.java)
             startActivity(Intent)
 
