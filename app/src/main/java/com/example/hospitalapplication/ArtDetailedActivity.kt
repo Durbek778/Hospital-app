@@ -1,16 +1,20 @@
 package com.example.hospitalapplication
 
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
+import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import androidx.appcompat.app.AppCompatActivity
-
 import androidx.viewpager2.widget.ViewPager2
 import com.example.hospitalapplication.adapters.ImageAdapter
 import com.example.hospitalapplication.models.ImageItem
 import java.util.*
 
 class ArtDetailedActivity : AppCompatActivity() {
+    private lateinit var scrollView: ScrollView
     private lateinit var viewpager2: ViewPager2
     private lateinit var pageChangeListener: ViewPager2.OnPageChangeCallback
 
@@ -28,6 +32,23 @@ class ArtDetailedActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         viewpager2 = findViewById<ViewPager2>(R.id.viewpager2)
+
+        scrollView = findViewById<ScrollView>(R.id.sv_wrapper)
+
+        // Set a global layout listener to scroll to the bottom after the view is drawn
+        scrollView.viewTreeObserver.addOnGlobalLayoutListener(object :
+            ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                scrollView.fullScroll(View.FOCUS_DOWN)
+                scrollView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+            }
+        })
+
+        // Optionally, you can use a Handler for a smooth scrolling effect
+        val handler = Handler()
+        handler.postDelayed({
+            scrollView.fullScroll(View.FOCUS_DOWN)
+        }, 7000) // Delay in milliseconds
 
 
         val imageList = arrayListOf(

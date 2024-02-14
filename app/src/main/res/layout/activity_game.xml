@@ -10,59 +10,54 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnCount="1"
-        android:paddingTop="36dp"
-        android:paddingBottom="36dp"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingRight="16dp"
+        android:paddingBottom="0dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="게임"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
 
         <androidx.cardview.widget.CardView
-
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:padding="36dp"
+            android:layout_marginBottom="26dp"
+            android:padding="0dp"
             app:cardBackgroundColor="@color/bg_primary"
             app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true">
-
+            app:cardElevation="4dp">
 
             <LinearLayout
-                android:layout_rowWeight="3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="16dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:paddingLeft="16dp"
-                android:paddingTop="16dp"
+                android:paddingTop="8dp"
                 android:paddingRight="16dp"
                 android:paddingBottom="0dp">
 
                 <!--card 1 -->
                 <ImageView
                     android:id="@+id/subwaysurfers"
-                    android:layout_width="334dp"
-                    android:layout_height="180dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_marginBottom="16dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground"
                     android:gravity="center"
-                    android:src="@drawable/subwaysurfers" />
+                    android:src="@drawable/subwaysurfers_copy" />
 
                 <!--card 2 -->
                 <ImageView
                     android:id="@+id/colorSort"
-                    android:layout_width="334dp"
-                    android:layout_height="180dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_marginBottom="16dp"
                     android:layout_weight="1"
                     android:clickable="true"
@@ -73,15 +68,14 @@
                 <!--card 3 -->
                 <ImageView
                     android:id="@+id/onetMaster"
-                    android:layout_width="334dp"
-                    android:layout_height="180dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_marginBottom="16dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground"
                     android:gravity="center"
                     android:src="@drawable/onet_master" />
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </GridLayout>
