@@ -47,6 +47,7 @@
                 android:paddingRight="16dp"
                 android:paddingBottom="16dp">
 
+
                 <!--  card 1 -->
                 <LinearLayout
                     android:id="@+id/navigation_to_Art_Dataileddd"
@@ -63,14 +64,15 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:id="@+id/image_view"
+                            android:id="@+id/image_viewwd"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:adjustViewBounds="true"
                             android:paddingLeft="4dp"
                             android:paddingRight="4dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/local_art" />
+                            android:src="@drawable/korean_art" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -81,8 +83,6 @@
                             android:textColor="@android:color/black"
                             android:textSize="50sp" />
                     </RelativeLayout>
-
-
                 </LinearLayout>
 
                 <!--  card 2 -->
@@ -102,9 +102,12 @@
 
                         <ImageView
                             android:id="@+id/image_vieww"
-                            android:layout_width="350dp"
-                            android:layout_height="220dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
+                            android:adjustViewBounds="true"
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/wester_art" />
 
@@ -117,10 +120,9 @@
                             android:textColor="@android:color/white"
                             android:textSize="50sp" />
                     </RelativeLayout>
-
                 </LinearLayout>
 
-                <!--                card 3 -->
+                <!--  card 3 -->
                 <LinearLayout
                     android:id="@+id/navigation_to_Art_Datailedd"
                     android:layout_width="match_parent"
@@ -136,13 +138,13 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:id="@+id/image_viewwe"
-                            android:layout_width="344dp"
-                            android:layout_height="210dp"
-                            android:layout_weight="1"
+                            android:id="@+id/image_views"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
-                            android:gravity="center"
                             android:scaleType="centerCrop"
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
                             android:src="@drawable/nature_art" />
 
                         <TextView
@@ -154,8 +156,8 @@
                             android:textColor="@android:color/black"
                             android:textSize="50sp" />
                     </RelativeLayout>
-
                 </LinearLayout>
+
 
             </LinearLayout>
 

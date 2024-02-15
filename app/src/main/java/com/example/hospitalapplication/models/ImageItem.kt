@@ -2,5 +2,5 @@ package com.example.hospitalapplication.models
 
 data class ImageItem(
     val id: String,
-    val url: String
+    val url: Int
 )

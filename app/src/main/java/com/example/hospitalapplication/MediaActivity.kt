@@ -15,12 +15,12 @@ class MediaActivity : AppCompatActivity() {
         val bt_video1 = findViewById<LinearLayout>(R.id.bt_video1)
         val bt_video2 = findViewById<LinearLayout>(R.id.bt_video2)
         val bt_video3 = findViewById<LinearLayout>(R.id.bt_video3)
-        val bt_video4 = findViewById<LinearLayout>(R.id.bt_video4)
+//        val bt_video4 = findViewById<LinearLayout>(R.id.bt_video4)
 
-        bt_video1.setOnClickListener { playVideo(R.raw.avatar) }
-        bt_video2.setOnClickListener { playVideo(R.raw.iternals) }
-        bt_video3.setOnClickListener { playVideo(R.raw.openhaimer) }
-        bt_video4.setOnClickListener { playVideo(R.raw.video_napaleon) }
+        bt_video1.setOnClickListener { playVideo(R.raw.videoplayback) }
+        bt_video2.setOnClickListener { playVideo(R.raw.videoplayback) }
+        bt_video3.setOnClickListener { playVideo(R.raw.videoplayback) }
+//        bt_video4.setOnClickListener { playVideo(R.raw.video_napaleon) }
     }
 
     private fun playVideo(resourceId: Int) {

@@ -20,6 +20,7 @@
             android:textSize="20sp"
             android:textColor="@android:color/black" />
 
+
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,19 +31,20 @@
             app:cardElevation="4dp"
             app:cardUseCompatPadding="true">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="32dp"
+                android:paddingTop="0dp"
                 android:layout_marginBottom="0dp"
                 android:orientation="vertical">
+
 
                 <!--1st card -->
                 <LinearLayout
                     android:id="@+id/bt_video1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginBottom="16dp"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground"
@@ -58,7 +60,7 @@
                             android:layout_height="match_parent"
                             android:padding="4dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/avatar" />
+                            android:src="@drawable/meditation_img" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -84,7 +86,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="16dp"
                             android:paddingTop="8dp"
-                            android:text="Name: 아바타 물 의 길"
+                            android:text="Name: 명상"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:textColor="@color/black" />
@@ -94,18 +96,18 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="16dp"
                             android:paddingTop="16dp"
-                            android:text="Description: 가족을 이룬 제이크 설리와 나이티리는 고대의 위협이 다시 떠오르자 집을 떠나 판도라 지역을 탐험해야 하며, 이로 인해 인간을 상대로 어려운 전쟁을 치르게 됩니다."
+                            android:text="Description: 고요한 악기 소리와 자연의 소리가 있는 명상 노래는 휴식과 마음 챙김을 기릅니다. 디지털 플랫폼에서 액세스할 수 있는 이 트랙은 일상의 평온을 위해 내면의 평화를 촉진합니다."
                             android:textSize="12sp" />
 
                     </LinearLayout>
                 </LinearLayout>
+
 
                 <!--2nd card -->
                 <LinearLayout
                     android:id="@+id/bt_video2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginBottom="16dp"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground"
@@ -121,7 +123,7 @@
                             android:layout_height="match_parent"
                             android:padding="4dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/eternals" />
+                            android:src="@drawable/meditation_img" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -147,7 +149,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="16dp"
                             android:paddingTop="8dp"
-                            android:text="Name: 이터날스"
+                            android:text="Name: 명상"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:textColor="@color/black" />
@@ -157,7 +159,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="16dp"
                             android:paddingTop="16dp"
-                            android:text="Description: '이터널스'는 마블 시네마틱 유니버스의 데비언츠로 알려진 고대의 적들로부터 지구를 지키기 위해 재회하는 불멸의 존재들을 따라갑니"
+                            android:text="Description: 고요한 악기 소리와 자연의 소리가 있는 명상 노래는 휴식과 마음 챙김을 기릅니다. 디지털 플랫폼에서 액세스할 수 있는 이 트랙은 일상의 평온을 위해 내면의 평화를 촉진합니다."
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -168,7 +170,6 @@
                     android:id="@+id/bt_video3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginBottom="16dp"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground"
@@ -184,7 +185,7 @@
                             android:layout_height="match_parent"
                             android:padding="4dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/openheimer" />
+                            android:src="@drawable/meditation_img" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -210,7 +211,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="16dp"
                             android:paddingTop="8dp"
-                            android:text="Name: 오펜하이머"
+                            android:text="Name: 명상"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:textColor="@color/black" />
@@ -220,75 +221,15 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="16dp"
                             android:paddingTop="16dp"
-                            android:text="Description: 제2차 세계대전 중 맨해튼 프로젝트를 도운 뛰어난 물리학자. 도덕성과 야망으로 고심하던 그는 파괴적인 힘으로 역사를 영원히 바꿔가며 원자폭탄의 개발을 주도합니다."
+                            android:text="Description: 고요한 악기 소리와 자연의 소리가 있는 명상 노래는 휴식과 마음 챙김을 기릅니다. 디지털 플랫폼에서 액세스할 수 있는 이 트랙은 일상의 평온을 위해 내면의 평화를 촉진합니다."
                             android:textSize="12sp" />
 
                     </LinearLayout>
                 </LinearLayout>
 
-                <!--4st card -->
-                <LinearLayout
-                    android:id="@+id/bt_video4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginBottom="16dp"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:orientation="horizontal">
-
-                    <RelativeLayout
-                        android:layout_width="0dp"
-                        android:layout_height="130dp"
-                        android:layout_weight="0.4">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="4dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/napoleon" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:alpha="0.9"
-                            android:src="@drawable/ic_baseline_play_arrow"
-                            android:theme="@style/ClickableView" />
-
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:orientation="vertical"
-                        android:gravity="center_vertical"
-                        android:padding="0dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="16dp"
-                            android:paddingTop="8dp"
-                            android:text="Name: 나폴레옹"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="16dp"
-                            android:paddingTop="16dp"
-                            android:text="Description: 야망과 사랑에 힘입어 나폴레옹은 전쟁의 장관 속에서 유럽을 정복합니다. 그러나 끝없는 권력 추구는 극적인 몰락을 초래하며, 역사의 가장 상징적인 인물로 기억됩니다."
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-                </LinearLayout>
 
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
     </GridLayout>
 

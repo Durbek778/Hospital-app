@@ -58,8 +58,8 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/profile_image"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:strokeColor="@color/white"
                         app:strokeWidth="2dp"
                         app:shapeAppearanceOverlay="@style/circular"
