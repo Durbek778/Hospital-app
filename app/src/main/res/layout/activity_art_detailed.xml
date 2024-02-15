@@ -112,6 +112,9 @@
                                 android:padding="40dp"
                                 android:text="@string/lorem_ipsum"
                                 android:textAlignment="viewStart"
+                                android:scrollbars="vertical"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
                                 android:textSize="15sp"
                                 android:lineSpacingExtra="8dp" />
 
