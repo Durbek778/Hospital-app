@@ -5,6 +5,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class GameActivity : AppCompatActivity() {
 
@@ -14,6 +16,11 @@ class GameActivity : AppCompatActivity() {
         setContentView(R.layout.activity_game)
 
         supportActionBar?.hide()
+
+        lifecycleScope.launch {
+            supabase.getGames()
+        }
+
 
         val subwaysurfers = findViewById<ImageView>(R.id.subwaysurfers)
         subwaysurfers.setOnClickListener {

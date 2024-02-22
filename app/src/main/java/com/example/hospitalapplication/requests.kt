@@ -50,15 +50,15 @@ data class Media(
 
 @Serializable
 data class Patient(
-    val patientid: Int = 0,
+    val patientId: Int = 0,
     val name: String = "",
-    val bloodpressure: Int = 0,
-    val bloodglucose: Int = 0,
-    val bodytemperature: Int = 0,
-    val heartrate: Int = 0,
-    val itemstobeinpected: String = "",
-    val medicationonhand: String = "",
-    val recentdiagnosticfindings: String = "",
+    val bloodPressure: String = "",
+    val bloodGlucose: Int = 0,
+    val bodyTemperature: Double = 0.0,
+    val heartRate: Int = 0,
+    val itemsToBeInspected: String? = null,
+    val medicationOnHand: String = "",
+    val recentDiagnosticFindings: String = "",
 )
 
 val handler = CoroutineExceptionHandler { context, throwable ->
@@ -68,6 +68,10 @@ val handler = CoroutineExceptionHandler { context, throwable ->
 class Requests {
     lateinit var supabase: SupabaseClient;
     lateinit var games: Game;
+    lateinit var users: User;
+    lateinit var patients: Patient;
+    lateinit var media: Media;
+    lateinit var art: Art;
 
     init {
         supabase = getClient()
@@ -121,13 +125,18 @@ class Requests {
 
     }
 
-//    public suspend fun getPatientInfo(): Patient {
-//        val supabase = getClient()
-//        val supabaseResponse = supabase.postgrest.from("patient").select(Columns.ALL)
-//        val data = supabaseResponse.decodeSingle<Patient>()
-//        Log.e("supabase", data.toString())
-////        games = data
-//        return data;
+    public suspend fun getPatientInfo(): Patient {
+        val supabase = getClient()
+        val supabaseResponse = supabase.postgrest.from("patient").select(Columns.ALL) {
+            filter {
+                eq("patientId", "7")
+            }
+        }
 
-//    }
+        val data = supabaseResponse.decodeSingle<Patient>()
+        Log.e("supabase", data.toString())
+        patients = data
+        return data;
+
+    }
 }
