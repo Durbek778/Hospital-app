@@ -30,53 +30,78 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp">
 
-            <LinearLayout
+            <ScrollView
+                android:id="@+id/scrollView1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="16dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp"
-                android:paddingRight="16dp"
-                android:paddingBottom="0dp">
+                android:layout_height="wrap_content">
 
-                <!--card 1 -->
-                <ImageView
-                    android:id="@+id/subwaysurfers"
+                <LinearLayout
+                    android:id="@+id/images_container"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
                     android:gravity="center"
-                    android:src="@drawable/subwaysurfers_copy" />
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="0dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
 
-                <!--card 2 -->
-                <ImageView
-                    android:id="@+id/colorSort"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:gravity="center"
-                    android:src="@drawable/color_sort" />
-
-                <!--card 3 -->
-                <ImageView
-                    android:id="@+id/onetMaster"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:gravity="center"
-                    android:src="@drawable/onet_master" />
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </LinearLayout>
+            </ScrollView>
         </androidx.cardview.widget.CardView>
     </GridLayout>
 </RelativeLayout>
+
+    <!--                <ScrollView-->
+    <!--                    android:id="@+id/scrollView1"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content">-->
+
+    <!--                    <LinearLayout-->
+
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:orientation="horizontal"></LinearLayout>-->
+    <!--                </ScrollView>-->
+    <!--card 1 -->
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/subwaysurfers"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="0dp"-->
+    <!--                    android:layout_marginBottom="16dp"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:foreground="?attr/selectableItemBackground"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:src="@drawable/subwaysurfers_copy" />-->
+
+    <!--                &lt;!&ndash;card 2 &ndash;&gt;-->
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/colorSort"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="0dp"-->
+    <!--                    android:layout_marginBottom="16dp"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:foreground="?attr/selectableItemBackground"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:src="@drawable/color_sort" />-->
+
+    <!--                &lt;!&ndash;card 3 &ndash;&gt;-->
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/onetMaster"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="0dp"-->
+    <!--                    android:layout_marginBottom="16dp"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:foreground="?attr/selectableItemBackground"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:src="@drawable/onet_master" />-->

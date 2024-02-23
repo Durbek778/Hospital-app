@@ -69,7 +69,7 @@ val handler = CoroutineExceptionHandler { context, throwable ->
 
 class Requests {
     lateinit var supabase: SupabaseClient;
-    lateinit var games: Game;
+    lateinit var games: List<Game>;
     lateinit var users: User;
     lateinit var patients: Patient;
     lateinit var media: Media;
@@ -113,6 +113,7 @@ class Requests {
         val supabase = getClient()
         val supabaseResponse = supabase.postgrest.from("game").select(Columns.ALL)
         val data = supabaseResponse.decodeList<Game>()
+        games = data
         Log.e("supabase", data.toString())
         return data;
 
