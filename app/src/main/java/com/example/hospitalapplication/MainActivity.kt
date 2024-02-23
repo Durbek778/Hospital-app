@@ -20,8 +20,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun updatePatientInfo() {
-        pulse_text.text = "체온:" + supabase.patients.heartRate.toString() + "C";
-        pills_text.text = "혈압:" + supabase.patients.bloodPressure.toString() + "mg/dl";
+        pulse_text.text = "체온:" + supabase.patients.heartRate.toString() + "bpm";
+        pills_text.text =
+            "혈압:" + supabase.patients.bloodPressureS + "/" + supabase.patients.bloodPressureD;
         infusion_text.text = "혈당:" + supabase.patients.bloodGlucose.toString() + "";
 
     }

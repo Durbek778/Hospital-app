@@ -52,13 +52,15 @@ data class Media(
 data class Patient(
     val patientId: Int = 0,
     val name: String = "",
-    val bloodPressure: String = "",
+    val bloodPressureS: String = "",
+    val bloodPressureD: String = "",
     val bloodGlucose: Int = 0,
     val bodyTemperature: Double = 0.0,
     val heartRate: Int = 0,
     val itemsToBeInspected: String? = null,
     val medicationOnHand: String = "",
     val recentDiagnosticFindings: String = "",
+    val patient_avatar_image: String = "",
 )
 
 val handler = CoroutineExceptionHandler { context, throwable ->
