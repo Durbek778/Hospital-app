@@ -15,6 +15,8 @@ class ProfileEditActivity : AppCompatActivity() {
     lateinit var heart_rate: TextView
     lateinit var blood_pressure: TextView
     lateinit var items_inspected: TextView
+    lateinit var madication_onhand: TextView
+    lateinit var diagnostic_findings: TextView
     var utils = Utils()
 
 
@@ -24,6 +26,8 @@ class ProfileEditActivity : AppCompatActivity() {
         heart_rate = findViewById(R.id.heard_rate)
         blood_pressure = findViewById(R.id.blood_pressure)
         items_inspected = findViewById(R.id.items_inspected)
+        madication_onhand = findViewById(R.id.madication_onhand)
+        diagnostic_findings = findViewById(R.id.diagnostic_findings)
 
     }
 
@@ -37,6 +41,8 @@ class ProfileEditActivity : AppCompatActivity() {
         blood_pressure.text =
             supabase.patients.bloodPressureS + "/" + supabase.patients.bloodPressureD
         items_inspected.text = supabase.patients.itemsToBeInspected
+        madication_onhand.text = supabase.patients.medicationOnHand
+        diagnostic_findings.text = supabase.patients.recentDiagnosticFindings
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

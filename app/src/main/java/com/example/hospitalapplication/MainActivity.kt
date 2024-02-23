@@ -1,7 +1,9 @@
 package com.example.hospitalapplication
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,11 +17,23 @@ class MainActivity : AppCompatActivity() {
     lateinit var pulse_text: TextView
     lateinit var pills_text: TextView
     lateinit var infusion_text: TextView
+    lateinit var profile_image: ImageView
+    var utils = Utils()
     suspend fun initSupabase() {
         supabase = Requests()
     }
 
+    fun initUI() {
+        profile_image = findViewById(R.id.profile_image)
+        pulse_text = findViewById(R.id.pulse_text)
+        infusion_text = findViewById(R.id.infusion_text)
+        pills_text = findViewById(R.id.pills_text)
+    }
+
     fun updatePatientInfo() {
+        utils.getImageBitmap(supabase.patients.patient_avatar_image) { bitmap ->
+            profile_image.setImageBitmap(bitmap as Bitmap?)
+        }
         pulse_text.text = "체온:" + supabase.patients.heartRate.toString() + "bpm";
         pills_text.text =
             "혈압:" + supabase.patients.bloodPressureS + "/" + supabase.patients.bloodPressureD;
@@ -27,11 +41,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun initUI() {
-        pulse_text = findViewById(R.id.pulse_text)
-        infusion_text = findViewById(R.id.infusion_text)
-        pills_text = findViewById(R.id.pills_text)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

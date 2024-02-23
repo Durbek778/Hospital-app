@@ -131,7 +131,7 @@ class Requests {
         val supabase = getClient()
         val supabaseResponse = supabase.postgrest.from("patient").select(Columns.ALL) {
             filter {
-                eq("patientId", "7")
+                eq("patientId", "11")
             }
         }
 
