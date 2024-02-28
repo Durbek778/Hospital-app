@@ -4,33 +4,27 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.hospitalapplication.databinding.ActivityArtBinding
 
 class ArtActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityArtBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_art)
-
+        binding = ActivityArtBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         supportActionBar?.hide()
-
-        val navigationDatailedArt = findViewById<LinearLayout>(R.id.navigation_to_Art_Datailed)
-        navigationDatailedArt.setOnClickListener {
+        binding.navigationToArtDatailedd.setOnClickListener {
             val Intent = Intent(this, ArtDetailedActivity::class.java)
             startActivity(Intent)
 
         }
-
-        val navigationDatailedArtt = findViewById<LinearLayout>(R.id.navigation_to_Art_Datailedd)
-        navigationDatailedArtt.setOnClickListener {
+        binding.navigationToArtDatailedd.setOnClickListener {
             val Intent = Intent(this, ArtDetailedActivity::class.java)
             startActivity(Intent)
-
         }
-
-        val navigationDatailedArttt = findViewById<LinearLayout>(R.id.navigation_to_Art_Dataileddd)
-        navigationDatailedArttt.setOnClickListener {
+        binding.navigationToArtDataileddd.setOnClickListener {
             val Intent = Intent(this, ArtDetailedActivity::class.java)
             startActivity(Intent)
-
         }
     }
 }
