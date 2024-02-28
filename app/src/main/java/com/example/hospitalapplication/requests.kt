@@ -46,6 +46,7 @@ data class Media(
     val mediatitle: String = "",
     val mediadescription: String = "",
     val mediasrc: String = "",
+    val media_img_src: String = ""
 )
 
 @Serializable

@@ -4,9 +4,12 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Space
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
@@ -24,23 +27,56 @@ class GameActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         lifecycleScope.launch {
+            
             supabase.getGames()
             val linearLayout1 = findViewById<View>(R.id.images_container) as LinearLayout
 
             for (x in 0 until supabase.games.size) {
                 withContext(Dispatchers.Main) {
-                    val image =
-                        ImageView(this@GameActivity)
+                    // Create ImageView and TextView dynamically for each game
+                    val image = ImageView(this@GameActivity)
+                    val textView = TextView(this@GameActivity)
+                    val space = Space(this@GameActivity)
+
+                    // Define fixed dimensions for the ImageView
+                    val imageWidth =
+                        resources.getDimensionPixelSize(R.dimen.image_width) // Define in dimens.xml
+                    val imageHeight =
+                        resources.getDimensionPixelSize(R.dimen.image_height) // Define in dimens.xml
+
+                    // Set the ImageView's layout parameters to the fixed dimensions
+                    image.layoutParams = LinearLayout.LayoutParams(imageWidth, imageHeight).apply {
+                        gravity = Gravity.CENTER
+                    }
+
+                    // Load and set image using utils.getImageBitmap
                     utils.getImageBitmap(supabase.games[x].gameImgSrc) { bitmap ->
                         image.setImageBitmap(bitmap as Bitmap?)
                     }
+
+                    // Set click listener for image to open URL in browser
                     image.setOnClickListener {
                         val url = supabase.games[x].gamesrc
                         openUrlInBrowser(url)
                     }
-                    linearLayout1.addView(image)
+
+                    // Set text for TextView from supabase.games[x].game_name
+                    textView.text = supabase.games[x].game_name
+
+                    // Add both ImageView and TextView to the linearLayout1
+                    val layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    ).apply {
+                        gravity = Gravity.CENTER
+                    }
+
+                    linearLayout1.addView(image, layoutParams)
+                    linearLayout1.addView(textView, layoutParams)
                 }
             }
+
+
         }
 
 
@@ -52,20 +88,3 @@ class GameActivity : AppCompatActivity() {
     }
 }
 
-//        val subwaysurfers = findViewById<ImageView>(R.id.subwaysurfers)
-//        subwaysurfers.setOnClickListener {
-//            val url = "https://poki.com/kr/g/subway-surfers"
-//            openUrlInBrowser(url)
-//        }
-//
-//        val colorSort = findViewById<ImageView>(R.id.colorSort)
-//        colorSort.setOnClickListener {
-//            val url = "https://poki.com/en/g/water-color-sort"
-//            openUrlInBrowser(url)
-//        }
-//
-//        val onetMaster = findViewById<ImageView>(R.id.onetMaster)
-//        onetMaster.setOnClickListener {
-//            val url = "https://poki.com/en/g/onet-master"
-//            openUrlInBrowser(url)
-//        }

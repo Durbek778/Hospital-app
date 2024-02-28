@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class MediaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,6 +13,11 @@ class MediaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_media)
 
         supportActionBar?.hide()
+
+        lifecycleScope.launch {
+            supabase.getMedia()
+
+        }
 
         val bt_video1 = findViewById<LinearLayout>(R.id.bt_video1)
         val bt_video2 = findViewById<LinearLayout>(R.id.bt_video2)
