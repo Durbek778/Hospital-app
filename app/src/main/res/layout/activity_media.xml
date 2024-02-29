@@ -4,233 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnCount="1"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="미디어시청"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
+    tools:context=".MediaActivity">
 
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="4"
-            android:padding="0dp"
-            app:cardBackgroundColor="@color/bg_primary"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true">
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="미디어시청"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-            <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="4"
+        android:layout_margin="20dp"
+        android:padding="0dp"
+        app:cardBackgroundColor="@color/bg_primary"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainText">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerMediarc"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="0dp"
-                android:layout_marginBottom="0dp"
-                android:orientation="vertical">
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_media_rc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <!--1st card -->
-                <LinearLayout
-                    android:id="@+id/bt_video1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:orientation="horizontal">
+    </androidx.cardview.widget.CardView>
 
-                    <RelativeLayout
-                        android:layout_width="0dp"
-                        android:layout_height="130dp"
-                        android:layout_weight="0.4">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="4dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/meditation_img" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:alpha="0.9"
-                            android:src="@drawable/ic_baseline_play_arrow"
-                            android:theme="@style/ClickableView" />
-
-                    </RelativeLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:orientation="vertical"
-                        android:gravity="center_vertical"
-                        android:padding="0dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="16dp"
-                            android:paddingTop="8dp"
-                            android:text="Name: 명상"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="16dp"
-                            android:paddingTop="16dp"
-                            android:text="Description: 고요한 악기 소리와 자연의 소리가 있는 명상 노래는 휴식과 마음 챙김을 기릅니다. 디지털 플랫폼에서 액세스할 수 있는 이 트랙은 일상의 평온을 위해 내면의 평화를 촉진합니다."
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-
-                <!--2nd card -->
-                <LinearLayout
-                    android:id="@+id/bt_video2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:orientation="horizontal">
-
-                    <RelativeLayout
-                        android:layout_width="0dp"
-                        android:layout_height="130dp"
-                        android:layout_weight="0.4">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="4dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/meditation_img" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:alpha="0.9"
-                            android:src="@drawable/ic_baseline_play_arrow"
-                            android:theme="@style/ClickableView" />
-
-                    </RelativeLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:orientation="vertical"
-                        android:gravity="center_vertical"
-                        android:padding="0dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="16dp"
-                            android:paddingTop="8dp"
-                            android:text="Name: 명상"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="16dp"
-                            android:paddingTop="16dp"
-                            android:text="Description: 고요한 악기 소리와 자연의 소리가 있는 명상 노래는 휴식과 마음 챙김을 기릅니다. 디지털 플랫폼에서 액세스할 수 있는 이 트랙은 일상의 평온을 위해 내면의 평화를 촉진합니다."
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!--3st card -->
-                <LinearLayout
-                    android:id="@+id/bt_video3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:orientation="horizontal">
-
-                    <RelativeLayout
-                        android:layout_width="0dp"
-                        android:layout_height="130dp"
-                        android:layout_weight="0.4">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="4dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/meditation_img" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:alpha="0.9"
-                            android:src="@drawable/ic_baseline_play_arrow"
-                            android:theme="@style/ClickableView" />
-
-                    </RelativeLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:orientation="vertical"
-                        android:gravity="center_vertical"
-                        android:padding="0dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="16dp"
-                            android:paddingTop="8dp"
-                            android:text="Name: 명상"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="16dp"
-                            android:paddingTop="16dp"
-                            android:text="Description: 고요한 악기 소리와 자연의 소리가 있는 명상 노래는 휴식과 마음 챙김을 기릅니다. 디지털 플랫폼에서 액세스할 수 있는 이 트랙은 일상의 평온을 위해 내면의 평화를 촉진합니다."
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

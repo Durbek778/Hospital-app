@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.hospitalapplication.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 
 lateinit var supabase: Requests
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var pills_text: TextView
     lateinit var infusion_text: TextView
     lateinit var profile_image: ImageView
+    private lateinit var binding: ActivityMainBinding
     var utils = Utils()
     suspend fun initSupabase() {
         supabase = Requests()
@@ -44,7 +46,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding=ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initUI()
 
         lifecycleScope.launch(handler) {
@@ -56,29 +59,28 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val navigationProfile = findViewById<LinearLayout>(R.id.navigation_to_ProfileEditAcv)
-        navigationProfile.setOnClickListener {
+        binding.navigationToProfileEditAcv?.setOnClickListener {
             val Intent = Intent(this, ProfileEditActivity::class.java)
             startActivity(Intent)
 
         }
 
-        val navigationGame = findViewById<LinearLayout>(R.id.navigation_to_game)
-        navigationGame.setOnClickListener {
+    //   val navigationGame = findViewById<LinearLayout>(R.id.navigation_to_game)
+        binding.navigationToGame.setOnClickListener {
             val Intent = Intent(this, GameActivity::class.java)
             startActivity(Intent)
 
         }
 
-        val navigationArt = findViewById<LinearLayout>(R.id.navigation_to_artAct)
-        navigationArt.setOnClickListener {
+     //   val navigationArt = findViewById<LinearLayout>(R.id.navigation_to_artAct)
+        binding.navigationToArtAct.setOnClickListener {
             val Intent = Intent(this, ArtActivity::class.java)
             startActivity(Intent)
 
         }
 
-        val navigationMedia = findViewById<LinearLayout>(R.id.navigation_to_mediaAct)
-        navigationMedia.setOnClickListener {
+      //  val navigationMedia = findViewById<LinearLayout>(R.id.navigation_to_mediaAct)
+        binding.navigationToMediaAct.setOnClickListener {
             val Intent = Intent(this, MediaActivity::class.java)
             startActivity(Intent)
 
