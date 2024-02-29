@@ -23,12 +23,13 @@ class GameActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             val games = supabase.getGames()
-            rcAdapter = GameAdapter(games){game: Game ->
+            rcAdapter = GameAdapter(games) { game: Game ->
                 openUrlInBrowser(game.gamesrc)
             }
             binding.gameRecycler.adapter = rcAdapter
             Log.d("MY_TAG", "onCreate: " + games.get(1).game_name)
         }
+
 
         /*
                 val subwaysurfers = findViewById<ImageView>(R.id.subwaysurfers)

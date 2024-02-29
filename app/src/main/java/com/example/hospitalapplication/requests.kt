@@ -23,6 +23,12 @@ data class User(
     val isDeleted: Boolean = false
 )
 
+@Serializable
+data class ArtImage(
+    val artid: Int = 0,
+    val imagesrc: String = "",
+    val artimgid: String = "",
+)
 
 @Serializable
 data class Art(
@@ -30,6 +36,7 @@ data class Art(
     val category: Int = 0,
     val name: String = "",
     val description: String = "",
+    val artimage: Array<ArtImage>
 )
 
 @Serializable
@@ -103,7 +110,9 @@ class Requests {
 
     public suspend fun getArts(): List<Art> {
         val supabase = getClient()
-        val supabaseResponse = supabase.postgrest.from("art").select(Columns.ALL)
+        val supabaseResponse =
+            supabase.postgrest.from("art")
+                .select(Columns.raw("artid,name,description,artimage(artid,imagesrc)"))
         val data = supabaseResponse.decodeList<Art>()
         Log.e("supabase", data.toString())
         return data;

@@ -2,9 +2,10 @@ package com.example.hospitalapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.hospitalapplication.databinding.ActivityArtBinding
+import kotlinx.coroutines.launch
 
 class ArtActivity : AppCompatActivity() {
     private lateinit var binding: ActivityArtBinding
@@ -13,6 +14,13 @@ class ArtActivity : AppCompatActivity() {
         binding = ActivityArtBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+
+        lifecycleScope.launch {
+            supabase.getArts()
+
+        }
+
+
         binding.navigationToArtDatailedd.setOnClickListener {
             val Intent = Intent(this, ArtDetailedActivity::class.java)
             startActivity(Intent)
