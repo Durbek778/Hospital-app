@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ArtActivity">
 
     <GridLayout
         android:layout_width="match_parent"
@@ -14,7 +14,6 @@
         android:paddingTop="36dp"
         android:paddingRight="16dp"
         android:paddingBottom="36dp"
-
         >
 
         <TextView
